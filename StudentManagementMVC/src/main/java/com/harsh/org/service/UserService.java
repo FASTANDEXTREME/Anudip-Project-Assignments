@@ -20,4 +20,8 @@ public interface UserService {
    public List<StudentDTO> showAllStudent();
    public boolean updateStudent(StudentDTO student);
    boolean deleteStudent(int studentId);
+
+   public List<CourseDTO> showAllCourses();
+   public boolean updateCourse(CourseDTO course);
+   public boolean deleteCourse(int courseId);
 }

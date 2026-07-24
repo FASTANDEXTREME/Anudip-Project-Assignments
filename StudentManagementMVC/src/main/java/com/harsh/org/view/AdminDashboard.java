@@ -134,16 +134,52 @@ public class AdminDashboard {
                             System.out.println("There was error while adding course.");
                         }
                     }
-                    case 6 -> System.out.println("View all Courses");
-                    case 7 -> System.out.println("Update Course");
-                    case 8 -> System.out.println("Delete Course");
+                    case 6 -> {
+                        System.out.println("===== View All Courses =====");
+                        List<CourseDTO> courses = userController.showAllCourses();
+                        for (CourseDTO c : courses) {
+                            System.out.println(c);
+                        }
+                    }
+                    case 7 -> {
+                        System.out.println("===== Update Course =====");
+                        System.out.print("Enter Course ID to update: ");
+                        int courseId = Integer.parseInt(br.readLine());
+
+                        System.out.print("Enter New Course Name: ");
+                        String courseName = br.readLine();
+
+                        System.out.print("Enter New Course Duration: ");
+                        String courseDuration = br.readLine();
+
+                        System.out.print("Enter New Course Fees: ");
+                        long courseFees = Long.parseLong(br.readLine());
+                        
+                        CourseDTO course = new CourseDTO(courseId, courseName, courseDuration, courseFees);
+                        if (userController.updateCourse(course)) {
+                            System.out.println("Course updated successfully");
+                        } else {
+                            System.out.println("Error Occurred or Course not found.");
+                        }
+                    }
+                    case 8 -> {
+                        System.out.println("===== Delete Course =====");
+                        System.out.print("Enter Course ID to delete: ");
+                        int courseId = Integer.parseInt(br.readLine());
+
+                        if (userController.deleteCourse(courseId)) {
+                            System.out.println("Course deleted successfully.");
+                        } else {
+                            System.out.println("Course not found.");
+                        }
+                    }
                     case 9 -> System.out.println("Logging out...");
 
                     default -> System.out.println("Invalid option! Please enter a number between 1 and 9.");
                 }
 
 
-            } while (option != 12);
+            } while (option != 9);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -41,4 +41,14 @@ public class UserServiceImpl implements UserService {
        return studentDAO.deleteStudent(studentId);
     }
 
+    public List<CourseDTO> showAllCourses() {
+        return courseDAO.showAllCourses();
+    }
+    public boolean updateCourse(CourseDTO course) {
+        return courseDAO.updateCourse(course);
+    }
+    public boolean deleteCourse(int courseId) {
+        return courseDAO.deleteCourse(courseId);
+    }
+
 }

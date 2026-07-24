@@ -55,11 +55,11 @@ src/main/java/com/harsh/org/
 
 ## 📌 TODO / Roadmap
 
-- [ ] Complete full CRUD operations for **Course Management**:
+- [x] Complete full CRUD operations for **Course Management**:
   - [x] Add Course
-  - [ ] View All Courses
-  - [ ] Update Course
-  - [ ] Delete Course
+  - [x] View All Courses
+  - [x] Update Course
+  - [x] Delete Course
 
 ---
 

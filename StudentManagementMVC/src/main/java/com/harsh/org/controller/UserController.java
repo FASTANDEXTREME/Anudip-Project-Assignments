@@ -45,4 +45,16 @@ public class UserController {
     public boolean deleteStudent(int studentId) {
         return  userService.deleteStudent(studentId);
     }
+
+    public List<CourseDTO> showAllCourses() {
+        return userService.showAllCourses();
+    }
+
+    public boolean updateCourse(CourseDTO course) {
+        return userService.updateCourse(course);
+    }
+
+    public boolean deleteCourse(int courseId) {
+        return userService.deleteCourse(courseId);
+    }
 }

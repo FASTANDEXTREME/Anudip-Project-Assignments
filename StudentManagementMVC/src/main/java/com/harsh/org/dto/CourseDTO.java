@@ -53,4 +53,13 @@ public class CourseDTO {
     public void setCourse_fees(long course_fees) {
         this.course_fees = course_fees;
     }
+
+    @Override
+    public String toString() {
+        return "Course ID      : " + course_id +
+                "\nCourse Name    : " + course_name +
+                "\nCourse Duration: " + course_duration +
+                "\nCourse Fees    : " + course_fees +
+                "\n===========================================";
+    }
 }
